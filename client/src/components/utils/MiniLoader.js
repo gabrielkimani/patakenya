@@ -1,18 +1,15 @@
-import React from "react";
-import { Preloader, Puff} from "react-preloader-icon";
+import React from 'react'
+import PuffLoader from "react-spinners/PuffLoader";
 
-function MiniLoader() {
+function MiniLoader({message}) {
   return (
-    <div className="flex justify-center items-center bg-slate-100 bg-opacity-25 h-[400px]">
-    <Preloader
-        use={Puff}
-        size={80}
-        strokeWidth={7}
-        strokeColor="#F3910B"
-        duration={800}
-      />
-    </div>
-  );
+    <div className='flex-col items-center justify-center'>
+        <div>
+        <PuffLoader color="#00FF00" loading={true} speedMultiplier={3} />
+
+  </div>
+  <div className='text-green-500'>{message}</div>
+  </div>)
 }
 
-export default MiniLoader;
+export default MiniLoader
